@@ -25,7 +25,9 @@ SECRET_KEY = 'zo6jijw8vu*a1h79o0s1)pt(_#h!*&=%sp9(&5)sn&l@gnczn('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+
+]
 
 
 # Application definition
@@ -37,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog'
+    'blog',
+    'account',
 ]
 
 MIDDLEWARE = [
@@ -57,7 +60,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join(BASE_DIR, 'templates')]
         ,
-        'APP_DIRS': True,
+        'APP_DIRS': False,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -125,3 +128,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#建立静态文件位置，指定了静态文件存放目录位置，即相对于根目录子目录
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR,"static"),
+)
