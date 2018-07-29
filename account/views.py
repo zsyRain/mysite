@@ -9,7 +9,7 @@ def user_login(request):
         login_form = LoginForm(request.POST)
         if login_form.is_valid():
             cd = login_form.cleaned_data
-            user = authenticate(username=cd['username'],password=cd['passwor'])
+            user = authenticate(username=cd['username'],password=cd['password'])
 
             if user:
                 login(request,user)
@@ -17,7 +17,7 @@ def user_login(request):
             else:
                 return HttpResponse("Invalid login")
 
-        if request.method == "GET":
+    if request.method == "GET":
             login_form = LoginForm()
             return render(request,"account/login.html",{"form":login_form})
 

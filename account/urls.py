@@ -4,5 +4,6 @@ from . import views
 from django.conf import settings
 
 urlpatterns = [
-    url(r'^login/$',views.user_login,name="user_login"),
+    #url('^login/$',views.user_login,name="user_login"),   //自定义的登录
+    url('^login/$',auth_views.login,name="user_login"),
 ]
