@@ -15,6 +15,18 @@
                 {% if user.is_authenticated %}
                 <li><a href="#">{{ user.username }}</a></li>
                 <li><a href="{%  url 'account:user_logout' %}">Logout</a></li>
+                <li>
+                    <div class="dropdown" style="margin-top:4px">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdowmMenu" data-toggle="dropdown">
+                            {{ user.username }}
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="{% url 'account:password_change' %}">修改密码</a></li>
+                        </ul>
+                    </div>
+                </li>
+
                 {% else %}
                 <li><a href="{% url 'account:user_login' %}">LOGIN</a></li>
                 {% endif %}
@@ -23,3 +35,6 @@
     </nav>
 
 </div>
+
+<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.js' %}"></script>
