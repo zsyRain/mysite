@@ -136,3 +136,12 @@ STATICFILES_DIRS = (
 
 # 登录后重定向到http://localhost:8000/blog/页面
 LOGIN_REDIRECT_URL = '/blog/'
+
+#邮件发送服务器
+EMAIL_HOST = 'smtp.qq.com'
+EMAIL_HOST_USER = "709894911@qq.com"
+EMAIL_HOST_PASSWORD = "ovmdeuvtnkribdjg"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = "709894911@qq.com"
+
