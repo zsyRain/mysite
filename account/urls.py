@@ -20,11 +20,10 @@ urlpatterns = [
                                                        "subject_template_name":"account/password_reset_subject.txt","post_reset_redirect":"/account/password_reset_done"},
                                                         name="password_reset"),
     url('^password_reset_done/$',auth_views.password_reset_done,{"template_name":"account/password_reset_done.html"},name="password_reset_done"),
-    url('^password-reset-confirm/(?P<uidb64>[-\w]+)/(?P<token>[-\w]+)/$',auth_views.password_reset_confirm,{"template_name":"account/password_reset_confirm.html",
-                                                                                                            "post_reset_redirect":"/account/password_reset_complete"},name="password_reset_confirm"),
-    url('^password-reset-complete/$',auth_views.password_reset_complete,{"template_name":"account/password_reset_complete.html"},name="password_reset_complete"),
+    url('^password-reset-confirm/(?P<uidb64>[-\w]+)/(?P<token>[-\w]+)/$',auth_views.password_reset_confirm,{"template_name":"account/password_reset_confirm.html","post_reset_redirect":"/account/password_reset_complete"},name="password_reset_confirm"),
+    url('^paswoord-reset-complete/$',auth_views.password_reset_complete,{"template_name":"account/password_reset_complete.html"},name="password_reset_complete"),
 
-
-
-
+    #个人信息
+    url('^myself/$',views.myself,name="myself"),
+    url('^myself_edit',views.myself_edit,name="myself_edit")
 ]
