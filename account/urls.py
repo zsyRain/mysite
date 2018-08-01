@@ -25,5 +25,7 @@ urlpatterns = [
 
     #个人信息
     url('^myself/$',views.myself,name="myself"),
-    url('^myself_edit',views.myself_edit,name="myself_edit")
+    url('^myself_edit/$',views.myself_edit,name="myself_edit"),
+
+    url('^my-image/$',views.my_image,name="my_image"),
 ]
